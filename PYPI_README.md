@@ -8,16 +8,11 @@ A Python library for Automated Exploratory Data Analysis, Automated Data Cleanin
 [![PyPi Downloads](https://static.pepy.tech/personalized-badge/data-purifier?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads)](https://pepy.tech/project/data-purifier)
 
 
-Demo Output of Auto EDA
-<br><br>
-<img src = "./static/demo.gif" width="600px" height = "300px">
-
 
 Table of Contents
 - [Data-Purifier](#data-purifier)
   - [Installation](#installation)
   - [Get Started](#get-started)
-    - [Tutorial](#tutorial)
     - [Automated EDA for NLP](#automated-eda-for-nlp)
     - [Automated Data Preprocessing for NLP](#automated-data-preprocessing-for-nlp)
     - [Automated EDA for Machine Learning](#automated-eda-for-machine-learning)
@@ -63,7 +58,7 @@ python -m spacy download en_core_web_sm
 Load the module
 ```python
 import datapurifier as dp
-from datapurifier import Mleda, Nlpeda, Nlpurifier, NLAutoPurifier
+from datapurifier import Mleda, Nleda, Nlpurifier, MlReport
 
 print(dp.__version__)
 ```
@@ -79,11 +74,6 @@ Load an example dataset, pass one of the dataset names from the example list as 
 df = dp.load_dataset("womens_clothing_e-commerce_reviews")
 ```
 
-### [Tutorial](https://youtu.be/gDI6m1foHD8)
-
-[![Data-Purifier Tutorial](https://img.youtube.com/vi/gDI6m1foHD8/0.jpg)](https://www.youtube.com/watch?v=gDI6m1foHD8)
-
-[Automated NLP Pre-Processing using Data-Purifier Library Blog](https://medium.com/@abhig0209/automated-nlp-pre-processing-using-data-purifier-library-183678fabc8e)
 
 
 ### Automated EDA for NLP
@@ -133,7 +123,7 @@ eda.unigram_df # for seeing unigram datfarame
 ```
 
 
-### **Automated Data Preprocessing for NLP**
+### Automated Data Preprocessing for NLP
 
 * In automated data preprocessing, it goes through the following pipeline, and return the cleaned data-frame
     1. Drop Null Rows
@@ -152,9 +142,7 @@ Pass in the dataframe with the name of the column which you have to clean
 cleaned_df = NLAutoPurifier(df, target = "tweets")
 ```
    
-### **Widget Based Automated Data Preprocessing for NLP**
-
-* Here you can choose the preprocessing method from the GUI
+**Widget Based Data Preprocessing**
 
 * It provides following cleaning techniques, where you have to just tick the checkbox and our system will automatically perform the operation for you.
 
@@ -224,8 +212,3 @@ report = MlReport(df)
 [Colab Notebook](https://colab.research.google.com/drive/1J932G1uzqxUHCMwk2gtbuMQohYZsze8U?usp=sharing)
 
 Official Documentation: https://cutt.ly/CbFT5Dw
-
-Python Package: https://pypi.org/project/data-purifier/
-
-
-
